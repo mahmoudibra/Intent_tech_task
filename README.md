@@ -2,7 +2,7 @@
 
 # State Management
 
-**Question:**
+**Question 1:**
 
 Describe the pros and cons of different state management solutions to maintain synchronization between local data state for each user of Basket, and a backend service ? 
 
@@ -52,3 +52,14 @@ Much more an architecture than provider, scope model, set state, it’s somethin
 - Can’t rebuild specific child widget that the new state only will reflect on it.  
 
 From my point of view i will chose Bloc as a state management pattern, with usage of Provider pattern for exposing Block class to the UI in an easy way, It seems that using provider from performance matter is better because we can rebuild only a single widget that should be affected by changing the state, in Bloc we rebuild the whole children and we don’t have this deep control, but i prefer code readability, maintainability and easy to test over this very little performance diffrence. 
+
+
+
+**Question 2 :**
+
+Consider potential issues a user may experience that would influence the state management system you would choose ? 
+
+**Answer:**
+
+If the UI is too complex and deep, rebuilding the whole UI every time state changes using Bloc it may cause in old devices with poor specs some performance issue.
+
