@@ -1,4 +1,4 @@
-# Intent Technology Task
+# Intent Tech Task
 
 ## State Management
 
