@@ -93,3 +93,29 @@ Flutter provides build-in responsive design widget and packages to help us desig
 we can also use  responsive_framework | Flutter Package.
 It has an AutoScale feature, that shrinks and expands your layout proportionally, preserving the exact look of your UI. This eliminates the need to manually adapt layouts to mobile, tablet, and desktop.
 
+
+
+## Asynchronous Dart
+ 
+From my point of view, using Isolate/threads in dart will introduce a layer of complexity if we over using them, so when to use isolates, We should use them whenever you think there is a lot of computation that needs to be offloaded from the main thread. 
+
+For example: 
+* Let say you want to execute a network call and you want to process that data that you just received . and that data contains about million records that alone will hang your UI.
+* You have some image processing tasks that you want to do on-device these kinds of tasks are highly computational as they have to deal with lots of number crunching operations which may lead to frozen UI or legginess in UI.
+
+
+**Question 1:**
+
+Describe the pros and cons of using Dart isolate asynchronously manage animation event loops
+
+**Answer:**
+
+##### pros: 
+- As long as there's a computation in animation, then switching this computation into Isolate should increase app performce. 
+
+##### cons: 
+- Using a lot of Isolate will introduce layer of complexity in any codebase. 
+- Isolates don't share any state and can only communicate using message passing.
+
+
+
