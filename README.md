@@ -1,6 +1,6 @@
 # Intent Technology Task
 
-# State Management
+## State Management
 
 **Question 1:**
 
@@ -62,4 +62,34 @@ Consider potential issues a user may experience that would influence the state m
 **Answer:**
 
 If the UI is too complex and deep, rebuilding the whole UI every time state changes using Bloc it may cause in old devices with poor specs some performance issue.
+
+
+
+## Widgets and Deployment Targets
+
+**Question 1:**
+
+Describe a project, folder and file structure to effectively build and maintain widgets for mobile and web extension targets ?
+
+**Answer:**
+
+In terms of project, folder and file structure it will always remain the same from my point of view whether if we are building a mobile app only or a mobile app that supports web or web extensions, almost all the tricky part will be on the widget itself, i will assume that the architecture follow separation on concerns principle and it totally separates all our business logic from our views or UI parts for example i would love to follow Uncle bob clean architecture and Bloc pattern for UI and business logic separation 
+
+The two things that i will take to my mind while designing the same code base for mobile and web is the third party integrations, they will be different way of implementation between mobile(android/ios) and web, so i will take to my mind to design an abstract contract to be implemented and executed on different ways depends on the current target wether mobile or web. 
+
+The same concept goes for how to access native browser apis, accessing native api’s will be different between mobile and web.
+
+
+**Question 2 :**
+
+Discuss what you believe are the most important considerations for widgets that deploy to different targets such as mobile and web ? 
+
+**Answer:**
+
+From my point of view the most important consideration are going to be around how should we build a responsive widget that should be smart enough to rebuild it self on a different ways based on the different screen sizes and layout especially the big difference between mobile and web.  
+
+Flutter provides build-in responsive design widget and packages to help us design complex user interface for different screen sizes, like Material BreakPoint, Aspect Ratio, Layout orientation,  Layout Builder, Media Query, Fitted Box.  
+
+we can also use  responsive_framework | Flutter Package.
+It has an AutoScale feature, that shrinks and expands your layout proportionally, preserving the exact look of your UI. This eliminates the need to manually adapt layouts to mobile, tablet, and desktop.
 
